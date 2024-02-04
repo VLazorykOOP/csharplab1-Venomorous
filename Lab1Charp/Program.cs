@@ -1,7 +1,4 @@
-﻿// Online C# Editor for free
-// Write, Edit and Run your C# code using C# Online Compiler
-
-using System;
+﻿using System;
 
 public class Lab1
 {
@@ -75,7 +72,8 @@ public class Lab1
 
     static string GetMonthName(int month)
     {
-        return new DateTime(2022, month, 1).ToString("MMMM");
+        DateTime currentDate = DateTime.Now;
+        return new DateTime(currentDate.Year, month, currentDate.Day).ToString("MMMM");
     }
 
     static void task4()
@@ -107,7 +105,7 @@ public class Lab1
         Console.Write("Enter second number(b): ");
         double b = Convert.ToDouble(Console.ReadLine());
 
-        Console.Write($"a / b = {a / b}");
+        Console.WriteLine($"a / b = {a / b}");
     }
 
     static void task6()
@@ -127,11 +125,61 @@ public class Lab1
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
 
+        while (true)
+        {
+            Console.WriteLine("=========================================================");
+            Console.WriteLine("Select a task:");
+            Console.WriteLine("1. Task 1");
+            Console.WriteLine("2. Task 2");
+            Console.WriteLine("3. Task 3");
+            Console.WriteLine("4. Task 4");
+            Console.WriteLine("5. Task 5");
+            Console.WriteLine("6. Task 6");
+            Console.WriteLine("7. Exit");
+
+            Console.Write("Enter your choice: ");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    task1();
+                    break;
+
+                case "2":
+                    task2();
+                    break;
+
+                case "3":
+                    task3();
+                    break;
+
+                case "4":
+                    task4();
+                    break;
+
+                case "5":
+                    task5();
+                    break;
+
+                case "6":
+                    task6();
+                    break;
+
+                case "7":
+                    return;
+
+                default:
+                    Console.WriteLine("Invalid choice. Please enter a valid option.");
+                    break;
+            }
+        }
+
         //task1();
         //task2();
         //task3();
         //task4();
         //task5();
-        task6();
+        //task6();
     }
 }
