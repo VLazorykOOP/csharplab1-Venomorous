@@ -22,6 +22,9 @@ public class Lab1
             {
                 Console.WriteLine("Invalid input. Please enter a valid number.");
             }
+        }else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid number.");
         }
     }
 
@@ -97,6 +100,16 @@ public class Lab1
         }
     }
 
+    static double Divide(double a, double b)
+    {
+        if (b == 0)
+        {
+            throw new DivideByZeroException("Cannot divide by zero.");
+        }
+
+        return a / b;
+    }
+
     static void task5()
     {
         Console.Write("Enter first number(a): ");
@@ -105,7 +118,9 @@ public class Lab1
         Console.Write("Enter second number(b): ");
         double b = Convert.ToDouble(Console.ReadLine());
 
-        Console.WriteLine($"a / b = {a / b}");
+        double result = Divide(a, b);
+
+        Console.WriteLine($"a / b = {result}");
     }
 
     static void task6()
@@ -139,6 +154,7 @@ public class Lab1
 
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
+            Console.WriteLine("---------------------------------------------------------");
 
             switch (choice)
             {
